@@ -27,7 +27,7 @@ const CMEditViewInjectedComponents = () => {
 
   const defaultQuery = useMemo(() => {
     if (!query) {
-      return { plugins: { i18n: { locale: currentLocale } } };
+      return { plugins: { i18n: { locale: initialData?.locale || currentLocale } } }; // Fix incorrect locale after navigating to relation
     }
 
     return query;
